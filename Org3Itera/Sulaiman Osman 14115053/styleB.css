@@ -1,0 +1,51 @@
+    .A{
+
+        display: inline-block;
+        background-color:#eeeff2;
+        border-left-style:dotted;
+        border-left-width: 10px;
+        border-left-color: #D0D0FF;
+        border-bottom: none;
+        border-top: none;
+        border-right: none;
+        width: 100px;
+        height: 150px;
+        text-align:left;
+        font-size :40px;
+        font-family :Tahoma;
+        margin-left:10px;
+        cursor: pointer;
+    }
+
+
+    .A:hover{  
+        background-color: #FFFF00;
+        color:#DAA51F;
+    }
+
+    .F{
+        display: inline-block;
+        background-color:#eeeff2;
+        border-left-style:dotted;
+        border-left-width: 10px;
+        border-left-color: #D0D0FF;
+        border-bottom: none;
+        border-top: none;
+        border-right: none;
+        width: 100px;
+        height: 150px;
+        text-align:left;
+        font-size :40px;
+        font-family :Tahoma;
+        margin-left:10px;
+        cursor: pointer;
+        position: absolute;
+        bottom:16px;
+        right: 16px;
+    }
+
+    .F:hover{  
+        background-color: #FFFF00;
+        color:#DAA51F;
+    }
+    

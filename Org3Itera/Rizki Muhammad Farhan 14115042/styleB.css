@@ -1,0 +1,28 @@
+    div{
+        display: inline-block;
+        background-color:#eeeff2;
+        border:10px dashed;
+        padding: 20px;
+        border-left-color: #D0D0FF;
+        border-bottom: none;
+        border-top: none;
+        border-right: none;
+        width: 100px;
+        height: 150px;
+        text-align:left;
+        font-size :40px;
+        font-family :Tahoma;
+        margin-left:10px;
+        cursor: pointer;
+    }
+
+
+    div:hover{  
+        background-color: #FFFF00;
+    }
+
+    .F{
+        position: absolute;
+        bottom:16px;
+        right: 16px;
+    }

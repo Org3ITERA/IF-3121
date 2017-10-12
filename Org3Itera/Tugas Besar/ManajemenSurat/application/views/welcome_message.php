@@ -2,86 +2,67 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+	<title>Admin</title>
 
-	<style type="text/css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link href="<?=base_url();?>assets/css/navbar.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Load JQuery -->
+  <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <!-- Load DataTables dan bootstrap -->
+  <script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" language="javascript" src="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.js"></script>
 
-	::selection{ background-color: #E13300; color: white; }
-	::moz-selection{ background-color: #E13300; color: white; }
-	::webkit-selection{ background-color: #E13300; color: white; }
-
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
-
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
-
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
-
-	#body{
-		margin: 0 15px 0 15px;
-	}
-	
-	p.footer{
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-	
-	#container{
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		-webkit-box-shadow: 0 0 8px #D0D0D0;
-	}
-	</style>
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/9dcbecd42ad/integration/bootstrap/3/dataTables.bootstrap.css">
+  <script type="text/javascript">$(document).ready(function(){
+    $('#myTable').DataTable();
+  });
+  </script>
 </head>
 <body>
 
-<div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
-
-	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
+<div>
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+		 <?php $this->load->view('navbar')?>
+		  <h1>Tabel User</h1>
+		 <table id="myTable" class="table table-striped table-bordered table-hover">
+		 <thead>
+			<tr>
+				<th>#</th>
+				<th>Username</th>
+				<th>Nama Lengkap</th>
+				<th>Jabatan</th>
+				<th>Status User</th>
+				<th>Email</th>
+				<th><a href="<?php echo site_url('welcome/form_input') ?>">Tambah</a></th>
+			</tr>
+			</thead>
+            <tbody>
+			<?php foreach ($hasil as $r) {?>
+			<tr>
+				<td><?php echo $r['id']?></td>
+				<td><?php echo $r['username']?></td>
+				<td><?php echo $r['nama_lengkap']?></td>
+				<td><?php echo $r['jabatan']?></td>
+				<td><?php echo $r['status_user']?></td>
+				<td><?php echo $r['email']?></td>
+				<td>
+					<a href="<?php echo site_url('welcome/form_edit/'.$r['id']) ?>">Edit</a> ||
+					<a href="<?php echo site_url('welcome/delete/'.$r['id']) ?>" onclick="return confirm ('Apakah anda yakin?')">Hapus</a>
+				</td>
+			</tr>
+			<?php }?>
+			</tbody>
+		</table>
 	</div>
+	</div>
+      <div class="col-md-1"></div>
+    </div>
 
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
+	
 </div>
 
 </body>

@@ -15,9 +15,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="<?php echo site_url('welcome/pageDataUser') ?>">Akun User</a></li>
-        <li><a href="<?php echo site_url('welcome/pageSMadmin') ?>">Surat Masuk</a></li>
-        <li><a href="<?php echo site_url('welcome/pageSKadmin') ?>">Surat Keluar</a></li>
+        <li><a href="<?php echo site_url('welcome/pageSMuserB') ?>">Surat Masuk</a></li>
+        <li><a href="<?php echo site_url('welcome/pageSKuserB') ?>">Surat Keluar</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Pengaturan <span class="caret"></span></a>
           <ul class="dropdown-menu"> 

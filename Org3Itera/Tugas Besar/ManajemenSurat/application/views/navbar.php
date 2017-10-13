@@ -9,29 +9,20 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">MyLet</a>
+      <a class="navbar-brand" href="<?php echo site_url('welcome/pageAdmin')?>">MyLet</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Akun User</a></li>
-        <li><a href="#">Surat Masuk</a></li>
-        <li><a href="#">Surat Keluar</a></li>
+        <li><a href="<?php echo site_url('welcome/pageSMuserA') ?>">Surat Masuk</a></li>
+        <li><a href="<?php echo site_url('welcome/pageSKuserA') ?>">Surat Keluar</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Profil <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Sunting Profil</a></li>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Pengaturan <span class="caret"></span></a>
+          <ul class="dropdown-menu"> 
+            <li><a href="<?php echo site_url('welcome/pageBI') ?>">Informasi dan Bantuan</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Keluar</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>Pengaturan <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Daftar Jenis Surat</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Informasi dan Bantuan</a></li>
+            <li><a href="<?php echo site_url('welcome/logout') ?>">Keluar</a></li>
           </ul>
         </li>
       </ul>

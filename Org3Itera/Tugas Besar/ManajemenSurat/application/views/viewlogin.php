@@ -26,10 +26,10 @@
 
 						<br><div id="gagallogin"><?php echo $this->session->flashdata('error') ?></div>
 						<input class="input" type="text" name="user" placeholder="Username"/>
-						<input class="input" type="Password" name="pass" placeholder="************"/>
+						<input class="input" type="Password" name="pass" placeholder="Password"/>
 
 						<br><input id="button" type="submit" name="login" value="Login"/></br>
-						<div id="forgotpass">Lupa password?</div>
+						<div id="forgotpass"><a href="<?php echo site_url('welcome/LupaPass')?>">Lupa password?</a></div>
 					</form>
 			</div>
 			</div>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Admin</title>
+	<title>MyLet</title>
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
    <link href="<?=base_url();?>assets/css/navbar.css" rel="stylesheet" />
@@ -26,35 +26,35 @@
 <div>
       <div class="col-md-1"></div>
       <div class="col-md-10">
-		 <?php $this->load->view('navbaradmin')?>
-		  <h1>Tabel User</h1>
+		 <?php $this->load->view('navbarb')?>
+		  <h1>Tabel Surat Keluar</h1>
 		 <table id="myTable" class="table table-striped table-bordered table-hover">
 		 <thead>
 			<tr>
 				<th>#</th>
-				<th>Username</th>
-				<th>Nama Lengkap</th>
-				<th>Jabatan</th>
-				<th>Status User</th>
-				<th>Email</th>
-				<th><a href="<?php echo site_url('welcome/form_input') ?>">Tambah</a></th>
+				<th>Penerima</th>
+				<th>Perihal</th>
+				<th>Nomor Surat</th>
+				<th>Tanggal Keluar Surat</th>
+				<th>File Surat Keluar</th>
+				<th>Option</th>
 			</tr>
 			</thead>
             <tbody>
-			<?php foreach ($hasil as $r) {?>
+			<?php foreach ($hasilsm as $rm) {
+					if($rm['status_surat_keluar']=="B" || $rm['status_surat_keluar']=="C") {
+				?>
 			<tr>
-				<td><?php echo $r['id']?></td>
-				<td><?php echo $r['username']?></td>
-				<td><?php echo $r['nama_lengkap']?></td>
-				<td><?php echo $r['jabatan']?></td>
-				<td><?php echo $r['status_user']?></td>
-				<td><?php echo $r['email']?></td>
+				<td><?php echo $rk['penerima_surat_keluar']?></td>
+				<td><?php echo $rk['perihal_surat_keluar']?></td>
+				<td><?php echo $rk['no_surat_keluar']?></td>
+				<td><?php echo $rk['tanggal_keluar_surat']?></td>
+				<td><?php echo $rk['file_surat_keluar']?></td>
 				<td>
-					<a href="<?php echo site_url('welcome/form_edit/'.$r['id']) ?>">Edit</a> ||
-					<a href="<?php echo site_url('welcome/delete/'.$r['id']) ?>" onclick="return confirm ('Apakah anda yakin?')">Hapus</a>
+					<a href="<?php echo site_url('welcome/form_editsm/'.$rm['id_surat_keluar']) ?>">View</a>
 				</td>
 			</tr>
-			<?php }?>
+			<?php } }?>
 			</tbody>
 		</table>
 	</div>

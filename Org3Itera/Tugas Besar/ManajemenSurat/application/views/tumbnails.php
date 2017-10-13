@@ -1,11 +1,12 @@
+
+
 <div class="row">
   <div class="col-sm-4 col-md-2">
     <div class="thumbnail">
-      <img src="https://placehold.it/150x80?text=IMAGE" alt="Image">
+      <img src="assets/image/SM-1.jpeg"" alt="Image">
       <div class="caption">
-        <h3>Thumbnail label</h3>
         <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+        <p><a href="#" class="btn btn-primary" role="button"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></a></p>
       </div>
     </div>
   </div>

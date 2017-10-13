@@ -27,31 +27,33 @@
       <div class="col-md-1"></div>
       <div class="col-md-10">
 		 <?php $this->load->view('navbaradmin')?>
-		  <h1>Tabel User</h1>
+		  <h1>Tabel Surat Keluar</h1>
 		 <table id="myTable" class="table table-striped table-bordered table-hover">
 		 <thead>
 			<tr>
 				<th>#</th>
-				<th>Username</th>
-				<th>Nama Lengkap</th>
-				<th>Jabatan</th>
-				<th>Status User</th>
-				<th>Email</th>
-				<th><a href="<?php echo site_url('welcome/form_input') ?>">Tambah</a></th>
+				<th>Penerima</th>
+				<th>Perihal</th>
+				<th>Nomor surat</th>
+				<th>Tanggal keluar keluar</th>
+				<th>File surat keluar</th>
+				<th>Status Surat Masuk</th>
+				<th><a href="<?php echo site_url('welcome/form_inputsk') ?>">Tambah</a></th>
 			</tr>
 			</thead>
             <tbody>
-			<?php foreach ($hasil as $r) {?>
+			<?php foreach ($hasilsk as $rk) {?>
 			<tr>
-				<td><?php echo $r['id']?></td>
-				<td><?php echo $r['username']?></td>
-				<td><?php echo $r['nama_lengkap']?></td>
-				<td><?php echo $r['jabatan']?></td>
-				<td><?php echo $r['status_user']?></td>
-				<td><?php echo $r['email']?></td>
+				<td><?php echo $rk['id_surat_keluar']?></td>
+				<td><?php echo $rk['penerima_surat_keluar']?></td>
+				<td><?php echo $rk['perihal_surat_keluar']?></td>
+				<td><?php echo $rk['no_surat_keluar']?></td>
+				<td><?php echo $rk['tanggal_keluar_surat']?></td>
+				<td><?php echo $rk['file_surat_keluar']?></td>
+				<td><?php echo $rk['status_surat_keluar']?></td>	
 				<td>
-					<a href="<?php echo site_url('welcome/form_edit/'.$r['id']) ?>">Edit</a> ||
-					<a href="<?php echo site_url('welcome/delete/'.$r['id']) ?>" onclick="return confirm ('Apakah anda yakin?')">Hapus</a>
+					<a href="<?php echo site_url('welcome/form_editsk/'.$rk['id_surat_keluar']) ?>">Edit</a> ||
+					<a href="<?php echo site_url('welcome/deletesk/'.$rk['id_surat_keluar']) ?>" onclick="return confirm ('Apakah anda yakin?')">Hapus</a>
 				</td>
 			</tr>
 			<?php }?>

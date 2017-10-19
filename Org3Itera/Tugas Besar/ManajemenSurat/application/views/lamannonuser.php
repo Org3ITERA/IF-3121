@@ -9,24 +9,24 @@
 <body>
 
 	<div>
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
-
-<?php $this->load->view('navbaradmin')?>
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
 
 <div class="A">
 		 
 				<div class="deskripsi">
 
-					<blockquote>
-							<h1><strong>Manajemen Surat Informatika ITERA </strong></h1>
-							<p>Selamat Datang <?php echo $this->session->userdata('loger') ?></p>
-							<p>Selamat menajalankan tugas anda dan semoga hari anda menyenangkan.</p>
-						</blockquote>
+					<form action="<?php echo site_url ('welcome/emailcek') ?>" method="POST">
+
+						<br>
+						<br><h1><strong>Maaf !</strong></h1>
+							<p>Anda tidak terdaftar sebagai pengguna!</p>
+					</form>
+							
 					</div>
 			</div>
 
-	<div class="col-md-1"></div>
+	<div class="col-md-2"></div>
 </div>
 	
 </div>

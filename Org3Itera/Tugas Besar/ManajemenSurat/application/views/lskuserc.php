@@ -52,7 +52,7 @@
 				<td><?php echo $rk['tanggal_keluar_surat']?></td>
 				<td><?php echo $rk['file_surat_keluar']?></td>
 				<td>
-					<a href="<?php echo site_url('welcome/form_editsm/'.$rk['id_surat_keluar']) ?>">View</a>
+					<a href="<?php echo site_url('welcome/form_editsk/'.$rk['id_surat_keluar']) ?>">View</a>
 				</td>
 			</tr>
 			<?php } }?>

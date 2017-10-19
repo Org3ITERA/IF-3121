@@ -17,8 +17,31 @@ class Welcome extends CI_Controller {
 		$status = $query->status_user;
 		if($hasil > 0){
 			if($status != "A"){
-				redirect('welcome/pageUser');
+				if($status == "K"){
+					$select = $this->db->get_where('user', array('username' => $user, 'password' => $pass))->row();
+					$data = array('logged_in' => true, 
+								  'loger' => $select->nama_lengkap);
+					$this->session->set_userdata($data);
+					redirect('welcome/pageUserK');
+				} else if ($status == "B"){
+					$select = $this->db->get_where('user', array('username' => $user, 'password' => $pass))->row();
+					$data = array('logged_in' => true, 
+								  'loger' => $select->nama_lengkap);
+					$this->session->set_userdata($data);
+					redirect('welcome/pageUserB');
+				} else if ($status == "C"){
+					$select = $this->db->get_where('user', array('username' => $user, 'password' => $pass))->row();
+					$data = array('logged_in' => true, 
+								  'loger' => $select->nama_lengkap);
+					$this->session->set_userdata($data);
+					redirect('welcome/pageUserC');
+				}
+				//redirect('welcome/pageUser');
 			} else {
+				$select = $this->db->get_where('user', array('username' => $user, 'password' => $pass))->row();
+					$data = array('logged_in' => true, 
+								  'loger' => $select->nama_lengkap );
+					$this->session->set_userdata($data);
 				redirect('welcome/pageAdmin');
 			}
 			//redirect('welcome/pageUser');
@@ -35,9 +58,16 @@ class Welcome extends CI_Controller {
 	}
 
 
-	public function pageUser(){	
-		$this->data['hasil'] = $this->model_crud->getUser('user');
-		$this->load->view('luser', $this->data);
+	public function pageUserK(){	
+		$this->load->view('luser');
+	}
+
+	public function pageUserB(){	
+		$this->load->view('luserb');
+	}
+
+	public function pageUserC(){	
+		$this->load->view('luserc');
 	}
 
 	public function LupaPass(){	
@@ -45,6 +75,20 @@ class Welcome extends CI_Controller {
 		$this->load->view('lupapass', $this->data);
 	}
 
+	public function emailcek(){
+		$user = $this->input->post('email',true);
+		$cek  = $this->model_crud->prosesVerifikasi($user);
+		$hasil = count($cek);
+		if($hasil > 0 ){
+			redirect('welcome/lamanlogin');
+		} else {
+			redirect('welcome/lamannonuser');	
+		}
+	}
+
+	public function lamannonuser(){
+		$this->load->view('lamannonuser');
+	}
 
 	public function pageBI(){
 		$this->load->view('bantuaninformasi');	
@@ -150,14 +194,16 @@ class Welcome extends CI_Controller {
 		$nosurat 		=$_POST['nosurat'];
 		$tglsuratmasuk 	=$_POST['tglsuratmasuk'];
 		$tglmasuksurat	=$_POST['tglmasuksurat'];
-		$statussurat 			=$_POST['statussurat'];
+		$statussurat 	=$_POST['statussurat'];
+		$filesuratmasuk =$_POST['filesuratmasuk'];
 		$data = array(
 				'pengirim_surat_masuk' 		=> $pengirim,
 				'perihal_surat_masuk' 		=> $perihal,
 				'no_surat_masuk'			=> $nosurat,
 				'tanggal_surat_masuk'		=> $tglsuratmasuk,
 				'tanggal_masuk_surat'		=> $tglmasuksurat,
-				'status_surat_masuk' 		=> $statussurat
+				'status_surat_masuk' 		=> $statussurat,
+				'file_surat_masuk'			=> $filesuratmasuk
 				);
 		$tambah = $this->model_crud->tambahDataSM($data);
 		if( $tambah > 0 ){
@@ -263,13 +309,15 @@ class Welcome extends CI_Controller {
 		$tanggal_surat_masuk		=$_POST['tanggal_surat_masuk'];
 		$tanggal_masuk_surat 		=$_POST['tanggal_masuk_surat'];
 		$status_surat_masuk 		=$_POST['status_surat_masuk'];
+		$file_surat_masuk			=$_POST['file_surat_masuk'];
 		$data = array(
 				'pengirim_surat_masuk' 		=> $pengirim_surat_masuk,
 				'perihal_surat_masuk' 		=> $perihal_surat_masuk,
 				'no_surat_masuk'			=> $no_surat_masuk,
 				'tanggal_surat_masuk'		=> $tanggal_surat_masuk,
 				'tanggal_masuk_surat'		=> $tanggal_masuk_surat,
-				'status_surat_masuk' 		=> $status_surat_masuk
+				'status_surat_masuk' 		=> $status_surat_masuk,
+				'file_surat_masuk'			=> $file_surat_masuk,
 				);
 		$edit = $this->model_crud->editDataSM('surat_masuk',$data,$id_surat_masuk);
 		if( $edit > 0 ){
@@ -291,7 +339,7 @@ class Welcome extends CI_Controller {
 				'perihal_surat_keluar' 		=> $perihal_surat_keluar,
 				'no_surat_keluar'			=> $no_surat_keluar,
 				'tanggal_keluar_surat'		=> $tanggal_keluar_surat,
-				'file_surat_keluar'		=> $file_surat_keluar,
+				'file_surat_keluar'		    => $file_surat_keluar,
 				'status_surat_keluar' 		=> $status_surat_keluar
 				);
 		$edit = $this->model_crud->editDataSK('surat_keluar',$data,$id_surat_keluar);

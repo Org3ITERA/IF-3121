@@ -43,7 +43,7 @@
 			</thead>
             <tbody>
 			<?php foreach ($hasilsm as $rm) {
-					if($rm['status_surat_masuk']=="C") {
+					if($rm['status_surat_masuk']!='A' && $rm['status_surat_masuk']!='B' ) {
 				?>
 			<tr>
 				<td><?php echo $rm['id_surat_masuk']?></td>

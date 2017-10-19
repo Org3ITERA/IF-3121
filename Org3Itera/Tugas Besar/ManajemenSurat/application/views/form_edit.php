@@ -31,7 +31,7 @@
 			<?php if( $dataEdit ) {
 				  $id 			= $dataEdit->id;
 			      $username     = $dataEdit->username;
-			      $password 	= $dataEdit->password;
+			      $password 	  = $dataEdit->password;
 			      $nama_lengkap = $dataEdit->nama_lengkap;
 			      $jabatan      = $dataEdit->jabatan;
 			      $status_user  = $dataEdit->status_user;

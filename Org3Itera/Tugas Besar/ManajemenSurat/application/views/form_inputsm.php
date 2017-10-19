@@ -65,6 +65,12 @@
                     <input type="text" name="statussurat" class="form-control"/><br>
                     </div>
             </div>
+            <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">File Surat Masuk</label>
+                    <div class="col-sm-10">
+                    <input type="text" name="filesuratmasuk" class="form-control"/><br>
+                    </div>
+            </div>
 
             <ul class="nav nav-pills">
 			  <li role="presentation" class="active"><div class="col-sm-offset-2 col-sm-10">

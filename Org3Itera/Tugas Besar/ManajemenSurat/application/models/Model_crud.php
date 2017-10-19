@@ -9,12 +9,16 @@ class Model_crud extends CI_Model {
 		return $this->db->get('user')->row();
 	}
 
+	public function prosesVerifikasi($email){
+		$this->db->where('email',$email);
+		return $this->db->get('user')->row();
+	}
+
 	public function getStatus($table_name,$user){
 		$this->db->where('username',$user);
 		$query = $this->db->get($table_name);
 		return $query->row();
 	}
-
 
 	public function getUser($table_name)
 	{

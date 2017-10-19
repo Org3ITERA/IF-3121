@@ -43,7 +43,7 @@
 			</thead>
             <tbody>
 			<?php foreach ($hasilsm as $rm) {
-					if($rm['status_surat_masuk']=="B" || $rm['status_surat_masuk']=="C") {
+					if($rm['status_surat_masuk']!="A") {
 				?>
 			<tr>
 				<td><?php echo $rm['id_surat_masuk']?></td>
@@ -57,7 +57,8 @@
 					<a href="<?php echo site_url('welcome/form_editsm/'.$rm['id_surat_masuk']) ?>">View</a>
 				</td>
 			</tr>
-			<?php } }?>
+			<?php } 
+				}?>
 			</tbody>
 		</table>
 	</div>

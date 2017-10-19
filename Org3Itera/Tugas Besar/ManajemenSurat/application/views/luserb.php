@@ -12,7 +12,7 @@
     <div class="col-md-1"></div>
     <div class="col-md-10">
 
-    	<?php $this->load->view('navbar');	?>
+    	<?php $this->load->view('navbarb');	?>
 
 <div class="A">
 		 

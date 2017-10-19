@@ -84,6 +84,12 @@
                     <input type="text" name="status_surat_masuk" class="form-control" value="<?php echo $status_surat_masuk ?> "/><br>
                     </div>
             </div>
+            <div class="form-group">
+                    <label for="inputEmail3" class="col-sm-2 control-label">File surat masuk</label>
+                    <div class="col-sm-10">
+                    <input type="text" name="file_surat_masuk" class="form-control" value="<?php echo $status_surat_masuk ?> "/><br>
+                    </div>
+            </div>
 
             <ul class="nav nav-pills">
         <li role="presentation" class="active"><div class="col-sm-offset-2 col-sm-10">

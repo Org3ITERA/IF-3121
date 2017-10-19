@@ -9,16 +9,17 @@
 <body>
 
 	<div>
-    <div class="col-md-1"></div>
-    <div class="col-md-10">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
 
 <div class="A">
 		 
 				<div class="deskripsi">
 
-					<form action="<?php echo site_url ('welcome/lamanlogin') ?>" method="POST">
+					<form action="<?php echo site_url ('welcome/emailcek') ?>" method="POST">
 
-						<h1><strong>Lupa Password ?</strong></h1>
+						<br>
+						<br><h1><strong>Lupa Password ?</strong></h1>
 							<p>Silakan masukkan email anda!</p>
 							<div class="form-group">
 				                    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
@@ -38,7 +39,7 @@
 					</div>
 			</div>
 
-	<div class="col-md-1"></div>
+	<div class="col-md-2"></div>
 </div>
 	
 </div>

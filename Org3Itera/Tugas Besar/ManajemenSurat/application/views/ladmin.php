@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>MyLet | Login </title>
+	<title>MyLet </title>
 	<link href="<?=base_url();?>assets/css/stylelamanadmin.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
 </head>

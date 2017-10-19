@@ -41,9 +41,11 @@
 			</tr>
 			</thead>
             <tbody>
-			<?php foreach ($hasil as $r) {?>
+			<?php 
+			$no = 1;
+			foreach ($hasil as $r) {?>
 			<tr>
-				<td><?php echo $r['id']?></td>
+				<td><?php echo $no++ ?></td>
 				<td><?php echo $r['username']?></td>
 				<td><?php echo $r['nama_lengkap']?></td>
 				<td><?php echo $r['jabatan']?></td>

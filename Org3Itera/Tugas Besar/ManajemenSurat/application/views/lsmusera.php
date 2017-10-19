@@ -42,9 +42,11 @@
 			</tr>
 			</thead>
             <tbody>
-			<?php foreach ($hasilsm as $rm) {?>
+			<?php 
+			$no = 1;
+			foreach ($hasilsm as $rm) {?>
 			<tr>
-				<td><?php echo $rm['id_surat_masuk']?></td>
+				<td><?php echo $no++ ?></td>
 				<td><?php echo $rm['pengirim_surat_masuk']?></td>
 				<td><?php echo $rm['perihal_surat_masuk']?></td>
 				<td><?php echo $rm['no_surat_masuk']?></td>
@@ -52,7 +54,7 @@
 				<td><?php echo $rm['tanggal_masuk_surat']?></td>
 				<td><?php echo $rm['file_surat_masuk']?></td>
 				<td>
-					<a href="<?php echo site_url('welcome/form_editsm/'.$rm['id_surat_masuk']) ?>">View</a>
+					<a href="<?php echo site_url('welcome/form/'.$rm['id_surat_masuk']) ?>">View</a>
 				</td>
 			</tr>
 			<?php  }?>

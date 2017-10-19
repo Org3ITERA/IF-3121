@@ -42,9 +42,11 @@
 			</tr>
 			</thead>
             <tbody>
-			<?php foreach ($hasilsk as $rk) {?>
+			<?php 
+			$no = 1;
+			foreach ($hasilsk as $rk) {?>
 			<tr>
-				<td><?php echo $rk['id_surat_keluar']?></td>
+				<td><?php echo $no++ ?></td>
 				<td><?php echo $rk['penerima_surat_keluar']?></td>
 				<td><?php echo $rk['perihal_surat_keluar']?></td>
 				<td><?php echo $rk['no_surat_keluar']?></td>

@@ -41,15 +41,18 @@
 			</tr>
 			</thead>
             <tbody>
-			<?php foreach ($hasilsm as $rk) {?>
-			<tr><td><?php echo $rk['id_surat_keluar']?></td>
+			<?php 
+			$no = 1;
+			foreach ($hasilsm as $rk) {?>
+			<tr>
+				<td><?php echo $no++ ?></td>
 				<td><?php echo $rk['penerima_surat_keluar']?></td>
 				<td><?php echo $rk['perihal_surat_keluar']?></td>
 				<td><?php echo $rk['no_surat_keluar']?></td>
 				<td><?php echo $rk['tanggal_keluar_surat']?></td>
 				<td><?php echo $rk['file_surat_keluar']?></td>
 				<td>
-					<a href="<?php echo site_url('welcome/form_editsk/'.$rk['id_surat_keluar']) ?>">View</a>
+					<a href="<?php echo site_url('welcome/form/'.$rk['id_surat_keluar']) ?>">View</a>
 				</td>
 			</tr>
 			<?php  }?>

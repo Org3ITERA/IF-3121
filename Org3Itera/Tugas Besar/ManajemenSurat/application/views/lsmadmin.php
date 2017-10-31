@@ -27,33 +27,37 @@
       <div class="col-md-1"></div>
       <div class="col-md-10">
 		 <?php $this->load->view('navbaradmin')?>
-		  <h1>Tabel User</h1>
+		  <h1>Tabel Surat Masuk</h1>
 		 <table id="myTable" class="table table-striped table-bordered table-hover">
 		 <thead>
 			<tr>
 				<th>#</th>
-				<th>Username</th>
-				<th>Nama Lengkap</th>
-				<th>Jabatan</th>
-				<th>Status User</th>
-				<th>Email</th>
-				<th><a href="<?php echo site_url('welcome/form_input') ?>">Tambah</a></th>
+				<th>Pengirim</th>
+				<th>Perihal</th>
+				<th>Nomor Surat</th>
+				<th>File S. Masuk</th>
+				<th>Tgl S. Masuk</th>
+				<th>Tgl Masuk Surat</th>
+				<th>Status S. Masuk</th>
+				<th><a href="<?php echo site_url('welcome/form_inputsm') ?>">Tambah</a></th>
 			</tr>
 			</thead>
             <tbody>
 			<?php 
 			$no = 1;
-			foreach ($hasil as $r) {?>
+			foreach ($hasilsm as $rm) {?>
 			<tr>
 				<td><?php echo $no++ ?></td>
-				<td><?php echo $r['username']?></td>
-				<td><?php echo $r['nama_lengkap']?></td>
-				<td><?php echo $r['jabatan']?></td>
-				<td><?php echo $r['status_user']?></td>
-				<td><?php echo $r['email']?></td>
+				<td><?php echo $rm['pengirim_surat_masuk']?></td>
+				<td><?php echo $rm['perihal_surat_masuk']?></td>
+				<td><?php echo $rm['no_surat_masuk']?></td>
+				<td><?php echo $rm['file_surat_masuk']?></td>
+				<td><?php echo $rm['tanggal_surat_masuk']?></td>
+				<td><?php echo $rm['tanggal_masuk_surat']?></td>
+				<td><?php echo $rm['status_surat_masuk']?></td>	
 				<td>
-					<a href="<?php echo site_url('welcome/form_edit/'.$r['id']) ?>">Edit</a> ||
-					<a href="<?php echo site_url('welcome/delete/'.$r['id']) ?>" onclick="return confirm ('Apakah anda yakin?')">Hapus</a>
+					<a href="<?php echo site_url('welcome/form_editsm/'.$rm['id_surat_masuk']) ?>">Edit</a> ||
+					<a href="<?php echo site_url('welcome/deletesm/'.$rm['id_surat_masuk']) ?>" onclick="return confirm ('Apakah anda yakin?')">Hapus</a>
 				</td>
 			</tr>
 			<?php }?>

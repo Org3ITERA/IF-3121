@@ -1,0 +1,78 @@
+.navbar-inverse{
+	background-color:#636D4B;
+	border:none; 
+}
+
+.navbar-heade .navbar-brand{ 
+	color:white;
+}
+
+.btn-default:hover{
+	background-color: #636D4B;
+	color:white;
+}
+
+.home{
+	font-size: 20px;
+}
+
+.overlay { 
+              position:fixed;
+              top:0;
+              left:0;
+              z-index:1;
+              background-color:rgba(0,0,0,0.4);;
+              width:0;
+              transition:0.5s;
+              height:100%;
+              width: 0%;
+              overflow-x:hidden;
+              display: inline-block;
+			  list-style-type: none;
+         }
+
+         button {
+            cursor:pointer;
+       }
+
+        .overlay .closebtn {
+              position:absolute;
+              top:5px;
+              right:12px;
+              font-size:30px;
+              color:white;
+              text-decoration:none;
+              font-family:"arial narrow";
+        }
+
+        .overlay-content {
+              margin-top:50px;
+        }
+
+        .overlay-content a {
+              font-size:20px;
+              font-family:"arial narrow";
+              color:white;
+              text-decoration:none;
+              text-align:center;
+              display:block;
+              padding-top:30px;
+        }
+
+.B{
+	
+	text-align: center;
+	position: relative;
+    vertical-align: middle;
+    margin-top: 5%;
+	margin : auto;
+	margin-bottom: 10%;
+	height: 10%;
+    width: 90%;
+
+}
+.B:hover{
+	border-radius: 5px;
+	background-color:#636D4B;
+}
+
